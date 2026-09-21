@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <defs>
+    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF7A1A"/>
+      <stop offset="100%" stop-color="#E05300"/>
+    </linearGradient>
+    <linearGradient id="navyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0B132B"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Rounded Background Container -->
+  <rect width="32" height="32" rx="7" fill="url(#navyGrad)" />
+  
+  <!-- Isometric Box Icon -->
+  <g transform="translate(6, 6)">
+    <!-- Top Face -->
+    <polygon points="10,0 20,5 10,10 0,5" fill="url(#primaryGrad)" />
+    
+    <!-- Left Face -->
+    <polygon points="0,5 10,10 10,20 0,15" fill="#C2410C" />
+    
+    <!-- Right Face -->
+    <polygon points="10,10 20,5 20,15 10,20" fill="#EA580C" />
+    
+    <!-- Center Fold Lines -->
+    <line x1="10" y1="0" x2="10" y2="10" stroke="#FFFFFF" stroke-width="0.8" opacity="0.6" />
+    <line x1="10" y1="10" x2="10" y2="20" stroke="#1E293B" stroke-width="0.8" opacity="0.4" />
+  </g>
+</svg>
