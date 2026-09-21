@@ -38,14 +38,36 @@ function SiteHeader() {
   return (
     <>
       <div className="bg-navy-deep text-secondary-foreground">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-5 py-2 text-xs">
-          <span className="hidden sm:block font-medium">Your Trusted Packaging &amp; Supply Partner</span>
-          <div className="flex items-center gap-5">
-            <a href={`mailto:${contact.email}`} className="hidden items-center gap-1.5 text-secondary-foreground/85 hover:text-white transition-colors sm:flex">
-              <Mail className="size-3.5 text-primary" /> {contact.email}
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-2 px-3 sm:px-5 py-2 text-[11px] sm:text-xs">
+          {/* Mobile Only: Phone on left corner */}
+          <a
+            href={contact.phoneHref}
+            className="flex sm:hidden items-center gap-1.5 text-secondary-foreground/90 hover:text-white transition-colors"
+          >
+            <Phone className="size-3.5 text-primary shrink-0" />
+            <span>{contact.phone}</span>
+          </a>
+
+          {/* Large Screen: Tagline on left */}
+          <span className="hidden sm:block font-medium">
+            Your Trusted Packaging &amp; Supply Partner
+          </span>
+
+          {/* Right Corner: Email on mobile | Email & Phone on desktop */}
+          <div className="flex items-center gap-3 sm:gap-5">
+            <a
+              href={`mailto:${contact.email}`}
+              className="flex items-center gap-1.5 text-secondary-foreground/90 hover:text-white transition-colors"
+            >
+              <Mail className="size-3.5 text-primary shrink-0" />
+              <span>{contact.email}</span>
             </a>
-            <a href={contact.phoneHref} className="flex items-center gap-1.5 text-secondary-foreground/85 hover:text-white transition-colors">
-              <Phone className="size-3.5 text-primary" /> {contact.phone}
+            <a
+              href={contact.phoneHref}
+              className="hidden sm:flex items-center gap-1.5 text-secondary-foreground/90 hover:text-white transition-colors"
+            >
+              <Phone className="size-3.5 text-primary shrink-0" />
+              <span>{contact.phone}</span>
             </a>
           </div>
         </div>
