@@ -24,7 +24,7 @@ function CustomersPage() {
     <SiteLayout>
       <PageHero
         eyebrow="Our Customers"
-        title="Trusted by 500+ Businesses"
+        title="Trusted by Leading Brands Across India"
         copy="Proudly partnering with leading industry brands for reliable packaging and hygiene supplies."
       />
 
@@ -34,7 +34,7 @@ function CustomersPage() {
           {customerLogos.map((item) => (
             <div
               key={item.id}
-              className="fade-in-view group aspect-square flex items-center justify-center rounded-2xl border border-border bg-card p-6 sm:p-8 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg hover:border-primary/50"
+              className="fade-in-view group aspect-square flex items-center justify-center rounded-2xl border border-border bg-white p-6 sm:p-8 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg hover:border-primary/50"
             >
               <img
                 src={item.src}
@@ -57,7 +57,7 @@ function CustomersPage() {
       {/* Bottom CTA Section with Curved Bottom */}
       <CTASection
         eyebrow="Partner With Us"
-        title="Join Over 500+ Satisfied Corporate & Retail Clients"
+        title="Join Our Growing Network of Corporate & Retail Partners"
         copy="Experience dependable supply schedules, competitive bulk pricing, and top-tier packaging products."
         primaryText="Get a Partner Quote"
         primaryHref="/contact-us"

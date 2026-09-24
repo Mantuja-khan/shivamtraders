@@ -130,13 +130,53 @@ function SiteHeader() {
   );
 }
 
+function WhiteDotMatrix({ className, rows = 6, cols = 6 }: { className: string; rows?: number; cols?: number }) {
+  return (
+    <div
+      className={`pointer-events-none absolute select-none z-0 ${className}`}
+      aria-hidden="true"
+    >
+      <div
+        className="grid gap-2 sm:gap-2.5"
+        style={{
+          gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))`,
+          gridTemplateRows: `repeat(${rows}, minmax(0, 1fr))`,
+        }}
+      >
+        {Array.from({ length: cols * rows }).map((_, i) => (
+          <span key={i} className="size-1 sm:size-1.5 rounded-full bg-white/45" />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function SiteFooter() {
   return (
-    <footer className="bg-navy-deep text-secondary-foreground">
-      <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 sm:grid-cols-2 lg:grid-cols-[1.25fr_.75fr_1fr_.7fr]">
-        <div>
+    <footer className="relative overflow-hidden bg-navy-deep text-secondary-foreground">
+      {/* 4 Decorative White Dot Matrix Grids (No square border, no background) */}
+      <WhiteDotMatrix className="top-5 left-5 opacity-70" rows={6} cols={6} />
+      <WhiteDotMatrix className="top-8 right-10 opacity-60 hidden sm:block" rows={6} cols={6} />
+      <WhiteDotMatrix className="bottom-16 left-[44%] opacity-50 hidden md:block" rows={6} cols={6} />
+      <WhiteDotMatrix className="bottom-5 right-6 opacity-70" rows={6} cols={6} />
+
+      <div className="relative z-10 mx-auto grid max-w-7xl gap-10 px-5 py-14 sm:grid-cols-2 lg:grid-cols-[1.35fr_.65fr_1fr_.75fr]">
+        <div className="space-y-4">
           <Logo inverse />
-          <p className="mt-5 text-xs leading-6 text-secondary-foreground/65">Your Trusted Partner in Packaging &amp; Supplies</p>
+          <p className="text-xs sm:text-[13px] leading-relaxed text-secondary-foreground/80 font-normal">
+            Shivam Traders is an ISO 9001:2015 certified premier packaging and supply company based in Bhiwadi, Rajasthan. Since 1998, we have been delivering top-tier corrugated boxes, bio-degradable containers, polybags, stretch film, adhesive tapes, and complete industrial facility hygiene products with fast turnaround times and dependable nationwide dispatch.
+          </p>
+          <div className="flex flex-wrap gap-2 text-[11px] font-semibold text-secondary pt-1">
+            <span className="inline-flex items-center gap-1 rounded-md bg-white/10 px-2.5 py-1 text-secondary-foreground/90 backdrop-blur-xs">
+              ✓ ISO 9001:2015 Certified
+            </span>
+            <span className="inline-flex items-center gap-1 rounded-md bg-white/10 px-2.5 py-1 text-secondary-foreground/90 backdrop-blur-xs">
+              ✓ Bio &amp; Eco Packaging
+            </span>
+            <span className="inline-flex items-center gap-1 rounded-md bg-white/10 px-2.5 py-1 text-secondary-foreground/90 backdrop-blur-xs">
+              ✓ &lt;24hr Turnaround
+            </span>
+          </div>
         </div>
         <div>
           <h3 className="reveal-heading font-bold uppercase tracking-wider text-sm">Quick Links</h3>
@@ -171,7 +211,7 @@ function SiteFooter() {
           </p>
         </div>
       </div>
-      <div className="border-t border-secondary-foreground/20">
+      <div className="relative z-10 border-t border-secondary-foreground/20">
         <div className="mx-auto grid max-w-7xl items-center gap-3 px-5 py-5 text-center text-xs text-secondary-foreground/55 sm:grid-cols-3 sm:text-left">
 
           <span>© 2026 Shivam Traders. All Rights Reserved.</span>

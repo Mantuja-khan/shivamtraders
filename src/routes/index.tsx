@@ -1,10 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Box, CheckCircle2, Clock3, ShieldCheck, Truck, Users } from "lucide-react";
+import { ArrowRight, Box, CheckCircle2, Clock3, Leaf, Recycle, ShieldCheck, Sparkles, Truck, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ProductCard, SectionTitle, SiteLayout } from "@/components/site-layout";
 import { TextReveal, RevealBlock } from "@/components/text-reveal";
 import { customerLogos } from "@/lib/customer-logos";
-import { industries, productCategories } from "@/lib/site-data";
+import { bioPackagingItems, industries, productCategories } from "@/lib/site-data";
 import ctaBannerImage from "@/assets/cta-banner.jpg";
 import heroImage from "@/assets/packaging-hero.jpg";
 import buildingImage from "@/assets/company-building.jpg";
@@ -77,7 +77,7 @@ function Index() {
             </RevealBlock>
 
             {/* Trust Badges */}
-            <RevealBlock delay={900} className="mt-8 sm:mt-12 grid grid-cols-3 gap-2 sm:gap-4">
+            {/* <RevealBlock delay={900} className="mt-8 sm:mt-12 grid grid-cols-3 gap-2 sm:gap-4">
               {[
                 [ShieldCheck, "High Quality", "Products"],
                 [Truck, "Timely", "Delivery"],
@@ -94,7 +94,7 @@ function Index() {
                   </div>
                 );
               })}
-            </RevealBlock>
+            </RevealBlock> */}
           </div>
         </div>
 
@@ -136,7 +136,7 @@ function Index() {
             {customerLogos.map((item) => (
               <div
                 key={item.id}
-                className="fade-in-view aspect-square flex items-center justify-center rounded-xl border border-border/60 bg-background/50 p-4 transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-md"
+                className="fade-in-view aspect-square flex items-center justify-center rounded-xl border border-border/60 bg-white p-4 transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-md"
               >
                 <img
                   src={item.src}
@@ -145,6 +145,88 @@ function Index() {
                 />
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* BIO Packaging & Sustainable Solutions Section */}
+      <section className="relative overflow-hidden bg-emerald-950/5 border-b border-emerald-900/10 py-14 sm:py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+            <div className="inline-flex items-center gap-1.5 rounded-full bg-emerald-600/10 px-3.5 py-1 text-xs sm:text-sm font-extrabold uppercase tracking-[0.16em] text-emerald-700">
+              <Leaf className="size-4 text-emerald-600" />
+              <span>Go Green • Sustainable Solutions</span>
+            </div>
+            <h2 className="mt-3 text-2xl sm:text-4xl font-extrabold text-navy tracking-tight">
+              Bio-Degradable &amp; Eco-Friendly Packaging
+            </h2>
+            <p className="mt-3 text-xs sm:text-sm md:text-base text-muted-foreground leading-relaxed">
+              Shivam Traders also deals in certified bio-degradable, compostable, and recyclable packaging products — empowering businesses with sustainable alternatives without sacrificing strength or reliability.
+            </p>
+          </div>
+
+          {/* Key Advantages Pills */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mb-10">
+            {[
+              { icon: Leaf, title: "100% Compostable", desc: "Eco-safe materials" },
+              { icon: Recycle, title: "Eco Alternative", desc: "Reduces plastic footprint" },
+              { icon: ShieldCheck, title: "Tested Durability", desc: "Tear & weight resistant" },
+              { icon: Sparkles, title: "Custom Branding", desc: "Eco-friendly inks" },
+            ].map((item, idx) => {
+              const ItemIcon = item.icon;
+              return (
+                <div
+                  key={idx}
+                  className="fade-in-view flex flex-col items-center text-center p-4 rounded-xl border border-emerald-900/10 bg-white shadow-xs"
+                >
+                  <div className="p-2.5 rounded-full bg-emerald-50 text-emerald-600 mb-2">
+                    <ItemIcon className="size-5" />
+                  </div>
+                  <strong className="text-xs sm:text-sm font-bold text-navy">{item.title}</strong>
+                  <span className="text-[11px] sm:text-xs text-muted-foreground mt-0.5">{item.desc}</span>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Bio Packaging Image Showcase */}
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+            {bioPackagingItems.map((item) => (
+              <div
+                key={item.id}
+                className="fade-in-view group overflow-hidden rounded-2xl border border-emerald-900/10 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg hover:border-emerald-500/40 flex flex-col">
+                <div className="relative aspect-4/3 overflow-hidden bg-emerald-50/40 flex items-center justify-center p-4">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <span className="absolute top-2.5 left-2.5 inline-flex items-center gap-1 rounded-md bg-emerald-700/90 backdrop-blur-xs px-2 py-0.5 text-[10px] font-bold text-white uppercase tracking-wider">
+                    <Leaf className="size-2.5" /> Bio
+                  </span>
+                </div>
+                <div className="p-4 flex flex-col flex-1">
+                  <h3 className="text-sm sm:text-base font-bold text-navy group-hover:text-emerald-700 transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="mt-1 text-xs text-muted-foreground leading-relaxed flex-1">
+                    {item.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Section Action */}
+          <div className="mt-10 sm:mt-12 text-center flex flex-wrap justify-center gap-4">
+            <Button variant="hero" size="lg" className="shadow-md bg-emerald-700 hover:bg-emerald-800 text-white" asChild>
+              <Link to="/contact-us">
+                Inquire for Bio Packaging <ArrowRight className="ml-1.5 size-4" />
+              </Link>
+            </Button>
+            <Button variant="heroOutline" size="lg" className="font-bold border-emerald-700 text-emerald-800 hover:bg-emerald-50" asChild>
+              <Link to="/products">Explore All Products</Link>
+            </Button>
           </div>
         </div>
       </section>

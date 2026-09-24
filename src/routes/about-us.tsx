@@ -51,7 +51,8 @@ function AboutPage() {
               <li key={v} className="fade-in-view flex items-start gap-2 text-sm font-semibold text-navy"><CheckCircle2 className="mt-0.5 size-5 shrink-0 text-primary" />{v}</li>
             ))}
           </ul>
-          <Button variant="hero" size="lg" className="mt-7" asChild><Link to="/contact-us">Talk to Our Team <ArrowRight /></Link></Button>
+          <Button variant="hero" size="lg" className="mt-7" asChild>
+            <Link to="/contact-us">Talk to Our Team <ArrowRight /></Link></Button>
         </div>
       </section>
 

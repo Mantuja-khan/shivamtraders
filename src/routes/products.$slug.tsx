@@ -78,6 +78,8 @@ const getCategoryIcon = (slug: string) => {
       return Sparkles;
     case "paper-bags":
       return ShoppingBag;
+    case "bio-products":
+      return Leaf;
     default:
       return Box;
   }

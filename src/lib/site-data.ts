@@ -30,6 +30,12 @@ import brownBOPPTapeImage from "@/assets/products/brown_bope_tap.png";
 import transparentBOPPTapeImage from "@/assets/products/transperent_bope_tape.png";
 import printedBOPPTapeImage from "@/assets/products/printed_bope_tape.png";
 import ppStrappingRollImage from "@/assets/products/pp_steping_roll.webp";
+import kraftFoodContainerLidImage from "@/assets/products/kraft-food-container-lid.jpg";
+import kraftFoodTrayImage from "@/assets/products/kraft-food-tray.jpg";
+import kraftRoundBowlImage from "@/assets/products/kraft-round-bowl.jpg";
+import woodenRoundSticksImage from "@/assets/products/wooden-round-sticks.jpg";
+import woodenIceCreamSticksImage from "@/assets/products/wooden-ice-cream-sticks.jpg";
+import woodenForksCutleryImage from "@/assets/products/wooden-forks-cutlery.jpg";
 
 import {
   Building2, Factory, HeartPulse, ShoppingCart, Truck, Utensils, Warehouse,
@@ -248,7 +254,7 @@ export const productCategories: ProductCategory[] = [
     slug: "housekeeping-and-sanitary",
     title: "House Keeping & Sanitary",
     text: "Complete range of cleaning and hygiene products.",
-    image: cleaningImage,
+    image: cleaningChemicalsImage,
     intro: "Everything your facility team needs to keep premises clean, safe and hygienic.",
     items: [
       {
@@ -323,6 +329,71 @@ export const productCategories: ProductCategory[] = [
         image: dcutPaperBagImage,
         categorySlug: "paper-bags",
         categoryTitle: "Paper Bags",
+      },
+    ],
+  },
+  {
+    slug: "bio-products",
+    title: "Bio Products",
+    text: "Eco-friendly biodegradable food containers, bowls, trays and birchwood products.",
+    image: kraftFoodContainerLidImage,
+    intro: "100% certified eco-friendly, biodegradable and compostable packaging products designed for modern businesses, food service, takeaway and sustainable living.",
+    items: [
+      {
+        id: "bio-kraft-container-lid",
+        name: "Kraft Meal Box with Lid",
+        spec: "Food-grade leak-resistant kraft meal container with clear snap-fit lid.",
+        image: kraftFoodContainerLidImage,
+        categorySlug: "bio-products",
+        categoryTitle: "Bio Products",
+      },
+      {
+        id: "bio-kraft-food-tray",
+        name: "Octagonal Kraft Food Trays",
+        spec: "Stackable eco-friendly kraft paper food & salad serving boats.",
+        image: kraftFoodTrayImage,
+        categorySlug: "bio-products",
+        categoryTitle: "Bio Products",
+      },
+      {
+        id: "bio-round-kraft-bowl",
+        name: "Round Kraft Salad & Soup Bowl",
+        spec: "Greaseproof round paper bowls with airtight transparent lids.",
+        image: kraftRoundBowlImage,
+        categorySlug: "bio-products",
+        categoryTitle: "Bio Products",
+      },
+      {
+        id: "bio-wooden-round-sticks",
+        name: "Birchwood Round Sticks & Skewers",
+        spec: "100% natural, smooth and splinter-free wooden sticks for food & crafts.",
+        image: woodenRoundSticksImage,
+        categorySlug: "bio-products",
+        categoryTitle: "Bio Products",
+      },
+      {
+        id: "bio-wooden-icecream-sticks",
+        name: "Wooden Ice Cream & Cutlery Sticks",
+        spec: "Eco-friendly biodegradable birchwood popsicle & dessert sticks.",
+        image: woodenIceCreamSticksImage,
+        categorySlug: "bio-products",
+        categoryTitle: "Bio Products",
+      },
+      {
+        id: "bio-wooden-forks",
+        name: "Birchwood Cutlery Forks",
+        spec: "Smooth biodegradable disposable wooden dinner & salad forks.",
+        image: woodenForksCutleryImage,
+        categorySlug: "bio-products",
+        categoryTitle: "Bio Products",
+      },
+      {
+        id: "bio-compostable-bags",
+        name: "Eco Kraft Shopping Bags",
+        spec: "High tear strength natural recyclable kraft paper carry bags.",
+        image: kraftPaperBagImage,
+        categorySlug: "bio-products",
+        categoryTitle: "Bio Products",
       },
     ],
   },
@@ -526,6 +597,55 @@ export const allProducts: ProductItem[] = [
     categorySlug: "bopp-tapes",
     categoryTitle: "BOPP Tapes",
   },
+  // Bio Products
+  {
+    id: "bio-kraft-container-lid",
+    name: "Kraft Meal Box with Lid",
+    spec: "Food-grade leak-resistant kraft meal container with clear snap-fit lid.",
+    image: kraftFoodContainerLidImage,
+    categorySlug: "bio-products",
+    categoryTitle: "Bio Products",
+  },
+  {
+    id: "bio-kraft-food-tray",
+    name: "Octagonal Kraft Food Trays",
+    spec: "Stackable eco-friendly kraft paper food & salad serving boats.",
+    image: kraftFoodTrayImage,
+    categorySlug: "bio-products",
+    categoryTitle: "Bio Products",
+  },
+  {
+    id: "bio-round-kraft-bowl",
+    name: "Round Kraft Salad & Soup Bowl",
+    spec: "Greaseproof round paper bowls with airtight transparent lids.",
+    image: kraftRoundBowlImage,
+    categorySlug: "bio-products",
+    categoryTitle: "Bio Products",
+  },
+  {
+    id: "bio-wooden-round-sticks",
+    name: "Birchwood Round Sticks & Skewers",
+    spec: "100% natural, smooth and splinter-free wooden sticks for food & crafts.",
+    image: woodenRoundSticksImage,
+    categorySlug: "bio-products",
+    categoryTitle: "Bio Products",
+  },
+  {
+    id: "bio-wooden-icecream-sticks",
+    name: "Wooden Ice Cream & Cutlery Sticks",
+    spec: "Eco-friendly biodegradable birchwood popsicle & dessert sticks.",
+    image: woodenIceCreamSticksImage,
+    categorySlug: "bio-products",
+    categoryTitle: "Bio Products",
+  },
+  {
+    id: "bio-wooden-forks",
+    name: "Birchwood Cutlery Forks",
+    spec: "Smooth biodegradable disposable wooden dinner & salad forks.",
+    image: woodenForksCutleryImage,
+    categorySlug: "bio-products",
+    categoryTitle: "Bio Products",
+  },
 ];
 
 export const industries = [
@@ -551,3 +671,56 @@ export const contact = {
   location: "Bhiwadi, Rajasthan",
   turnaroundTime: "<24 hours",
 };
+
+export interface BioPackagingItem {
+  id: string;
+  title: string;
+  desc: string;
+  image: string;
+}
+
+export const bioPackagingItems: BioPackagingItem[] = [
+  {
+    id: "bio-kraft-container-lid",
+    title: "Kraft Meal Box with Lid",
+    desc: "Food-grade leak-resistant kraft meal container with clear snap-fit lid.",
+    image: kraftFoodContainerLidImage,
+  },
+  {
+    id: "bio-kraft-food-tray",
+    title: "Octagonal Kraft Food Trays",
+    desc: "Stackable eco-friendly kraft paper food & salad serving boats.",
+    image: kraftFoodTrayImage,
+  },
+  {
+    id: "bio-round-kraft-bowl",
+    title: "Round Kraft Salad & Soup Bowl",
+    desc: "Greaseproof round paper bowls with airtight transparent lids.",
+    image: kraftRoundBowlImage,
+  },
+  {
+    id: "bio-wooden-round-sticks",
+    title: "Birchwood Round Sticks & Skewers",
+    desc: "100% natural, smooth and splinter-free wooden sticks for food & crafts.",
+    image: woodenRoundSticksImage,
+  },
+  {
+    id: "bio-wooden-icecream-sticks",
+    title: "Wooden Ice Cream & Cutlery Sticks",
+    desc: "Eco-friendly biodegradable birchwood popsicle & dessert sticks.",
+    image: woodenIceCreamSticksImage,
+  },
+  {
+    id: "bio-wooden-forks",
+    title: "Birchwood Cutlery Forks",
+    desc: "Smooth biodegradable disposable wooden dinner & salad forks.",
+    image: woodenForksCutleryImage,
+  },
+  {
+    id: "bio-compostable-bags",
+    title: "Eco Kraft Shopping Bags",
+    desc: "High tear strength natural recyclable kraft paper carry bags.",
+    image: kraftPaperBagImage,
+  },
+];
+

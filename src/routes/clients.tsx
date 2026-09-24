@@ -8,7 +8,7 @@ export const Route = createFileRoute("/clients")({
   head: () => ({
     meta: [
       { title: "Our Clients | Shivam Traders Packaging & Supplies" },
-      { name: "description", content: "Discover the 500+ businesses and leading brands that trust Shivam Traders for their packaging and hygiene solutions." },
+      { name: "description", content: "Discover the businesses and leading brands that trust Shivam Traders for their packaging and hygiene solutions." },
       { property: "og:title", content: "Our Clients | Shivam Traders" },
       { property: "og:description", content: "Discover the businesses that trust Shivam Traders for quality packaging." },
       { property: "og:type", content: "website" },
@@ -23,7 +23,7 @@ function ClientsPage() {
     <SiteLayout>
       <PageHero
         eyebrow="Our Valued Clients"
-        title="Trusted by 500+ Businesses Across India"
+        title="Trusted by Leading Brands Across India"
         copy="From large manufacturing plants to fast-growing retail brands, businesses trust Shivam Traders for reliable, high-grade packaging materials and timely supply."
       />
 
@@ -46,7 +46,7 @@ function ClientsPage() {
           {customerLogos.map((item) => (
             <div
               key={item.id}
-              className="fade-in-view group aspect-square flex items-center justify-center rounded-2xl border border-border/80 bg-card p-4 sm:p-5 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-md"
+              className="fade-in-view group aspect-square flex items-center justify-center rounded-2xl border border-border/80 bg-white p-4 sm:p-5 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-md"
             >
               <img
                 src={item.src}
@@ -102,7 +102,7 @@ function ClientsPage() {
             {/* Stats Grid */}
             <div className="grid grid-cols-2 gap-4 sm:gap-6">
               {[
-                [Users, "500+", "Active Corporate & Retail Clients"],
+                [Users, "Pan-India", "Corporate & Retail Brand Partners"],
                 [ShieldCheck, "100%", "Quality Inspected Shipments"],
                 [Truck, "95%+", "On-Time Dispatch Record"],
                 [Clock3, "10+", "Years of Packaging Expertise"],
